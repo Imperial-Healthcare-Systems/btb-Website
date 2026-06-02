@@ -9,10 +9,5 @@ function resolveLaunchDate(): string {
 }
 
 export default function Page() {
-  return (
-    <>
-      <ComingSoon launchIso={resolveLaunchDate()} />
-      <footer>© 2026 Beyond The Body · All Rights Reserved</footer>
-    </>
-  );
+  return <ComingSoon launchIso={resolveLaunchDate()} />;
 }

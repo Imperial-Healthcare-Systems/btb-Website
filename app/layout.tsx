@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from 'next';
-import { Fraunces, Jost } from 'next/font/google';
+import { Cormorant_Garamond, Jost } from 'next/font/google';
 import './globals.css';
 
-const fraunces = Fraunces({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600'],
   style: ['normal', 'italic'],
   display: 'swap',
-  variable: '--font-fraunces'
+  variable: '--font-cormorant'
 });
 
 const jost = Jost({
@@ -18,17 +18,19 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: 'Beyond The Body — Coming Soon',
-  description: 'Beyond The Body — a new chapter in fine fragrance. Launching soon.',
+  title: 'Beyond the Body — Coming Soon',
+  description: 'The Art of Attraction. A new chapter in fine fragrance. Launching soon.',
   openGraph: {
-    title: 'Beyond The Body — Coming Soon',
-    description: 'A new chapter in fine fragrance. Launching soon.',
-    type: 'website'
+    title: 'Beyond the Body — Coming Soon',
+    description: 'The Art of Attraction. A new chapter in fine fragrance.',
+    type: 'website',
+    images: ['/hero.jpg']
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Beyond The Body — Coming Soon',
-    description: 'A new chapter in fine fragrance. Launching soon.'
+    title: 'Beyond the Body — Coming Soon',
+    description: 'The Art of Attraction. A new chapter in fine fragrance.',
+    images: ['/hero.jpg']
   },
   icons: { icon: '/favicon.svg' }
 };
@@ -36,12 +38,12 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#3a1620'
+  themeColor: '#1a0609'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${jost.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <body>{children}</body>
     </html>
   );

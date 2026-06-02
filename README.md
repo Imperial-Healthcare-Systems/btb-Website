@@ -65,5 +65,10 @@ CMD ["npm", "start"]
 ```
 
 ## Notes
-- The original HTML embedded a large base64 PNG logo (~160 KB). It now lives in `app/logo.ts` as `LOGO_DATA_URL`. To switch to an optimized asset, drop the file into `public/` and replace the `<img src={LOGO_DATA_URL}>` in `app/ComingSoon.tsx` with `<Image src="/logo.png" ... />`.
-- The original `index (4).html` is preserved next to this folder for reference.
+- Assets are served from `public/`:
+  - `public/logo.png` — brand mark (~128 KB)
+  - `public/hero.jpg` — hero image (~220 KB)
+  - `public/corner.svg` — gold-thread ornament (animations are embedded in the SVG so it works via `<img>`)
+  - `public/favicon.svg`
+- The original `index (4).html` and `updated_UI_BTB.html` are preserved next to this folder for reference.
+- Ember animation is canvas-based and runs inside `app/ComingSoon.tsx` via a `useEffect` hook.
